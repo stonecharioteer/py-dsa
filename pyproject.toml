@@ -1,0 +1,59 @@
+[project]
+name = "py-dsa"
+version = "0.1.0"
+description = "practice DSA concepts in Python"
+readme = "README.md"
+authors = [
+    { name = "Vinay Keerthi", email = "11478411+stonecharioteer@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+py-dsa = "py_dsa:main"
+
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=4.0.0",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "fundamentals: Fundamental data structures and algorithms exercises",
+    "bfs: Breadth First Search exercises",
+    "bfs_basic: Basic BFS exercises for beginners",
+    "bfs_intermediate: Intermediate BFS exercises",
+    "bfs_advanced: Advanced BFS exercises",
+    "dp: Dynamic Programming exercises",
+    "dp_basic: Basic DP exercises for beginners",
+    "dp_intermediate: Intermediate DP exercises",
+    "dp_advanced: Advanced DP exercises",
+    "sliding_window: Sliding Window technique exercises",
+    "sliding_window_basic: Basic sliding window exercises",
+    "sliding_window_intermediate: Intermediate sliding window exercises",
+    "sliding_window_advanced: Advanced sliding window exercises",
+    "two_pointers: Two Pointers technique exercises",
+    "two_pointers_basic: Basic two pointers exercises",
+    "two_pointers_intermediate: Intermediate two pointers exercises",
+    "two_pointers_advanced: Advanced two pointers exercises",
+    "backtracking: Backtracking algorithm exercises",
+    "backtracking_basic: Basic backtracking exercises",
+    "backtracking_intermediate: Intermediate backtracking exercises",
+    "backtracking_advanced: Advanced backtracking exercises",
+    "easy: Easy difficulty level",
+    "medium: Medium difficulty level",
+    "hard: Hard difficulty level",
+]
+addopts = ["--cov=src", "--cov-report=html", "--cov-report=term-missing", "--cov-fail-under=80"]
+testpaths = ["tests"]
