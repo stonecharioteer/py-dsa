@@ -271,6 +271,83 @@ lint:
 show-markers:
     uv run pytest --markers
 
+# Show coverage for all test categories sorted by coverage percentage
+coverage:
+    #!/usr/bin/env bash
+    echo "📊 Test Coverage Report - Sorted by Coverage Percentage"
+    echo "========================================================"
+    echo ""
+    
+    # Function to get coverage for a specific marker
+    get_coverage() {
+        local marker="$1"
+        local name="$2"
+        coverage_output=$(uv run pytest -m "$marker" --cov=src --cov-report=term --tb=no --quiet 2>/dev/null | grep "TOTAL" | awk '{print $4}' | sed 's/%//')
+        if [[ -n "$coverage_output" && "$coverage_output" != "0" ]]; then
+            printf "%-35s %3s%%\n" "$name" "$coverage_output"
+        else
+            printf "%-35s %3s%%\n" "$name" "0"
+        fi
+    }
+    
+    # Core DSA categories
+    echo "🚀 Core DSA Categories:"
+    get_coverage "bit_manipulation" "Bit Manipulation"
+    get_coverage "sliding_window" "Sliding Window"
+    get_coverage "heap" "Heap & Priority Queue"
+    get_coverage "string_algorithms" "String Algorithms"
+    get_coverage "two_pointers" "Two Pointers"
+    get_coverage "greedy" "Greedy Algorithms"
+    get_coverage "backtracking" "Backtracking"
+    get_coverage "fundamentals" "Fundamentals"
+    get_coverage "linked_list" "Linked Lists"
+    get_coverage "dp" "Dynamic Programming"
+    get_coverage "graph" "Graph Algorithms"
+    get_coverage "binary_search" "Binary Search"
+    get_coverage "trie" "Trie (Prefix Tree)"
+    get_coverage "stack_queue" "Stack & Queue"
+    get_coverage "bfs" "Breadth-First Search"
+    get_coverage "union_find" "Union Find"
+    echo ""
+    
+    # Data Science categories
+    echo "🔬 Data Science & ML:"
+    get_coverage "numpy" "NumPy"
+    get_coverage "pandas" "Pandas"
+    get_coverage "pytorch" "PyTorch"
+    echo ""
+    
+    # Web Development categories
+    echo "🌐 Web Development:"
+    get_coverage "fastapi" "FastAPI"
+    get_coverage "pydantic" "Pydantic"
+    echo ""
+    
+    # Interview Prep
+    echo "🎯 Interview Preparation:"
+    get_coverage "blind150" "Blind 150"
+    echo ""
+    
+    # Difficulty levels
+    echo "📈 By Difficulty Level:"
+    get_coverage "easy" "Easy Problems"
+    get_coverage "medium" "Medium Problems" 
+    get_coverage "hard" "Hard Problems"
+    echo ""
+    
+    # Overall coverage
+    echo "📊 Overall Project Coverage:"
+    uv run pytest --cov=src --cov-report=term --tb=no --quiet 2>/dev/null | grep "TOTAL" | awk '{printf "%-35s %s\n", "Total Project Coverage", $4}'
+    echo ""
+    echo "💡 Note: Low coverage in some modules is expected - they're learning exercises!"
+    echo "   High coverage indicates working examples with thorough test validation."
+
+# Show coverage with detailed breakdown by module
+coverage-detailed:
+    @echo "📊 Detailed Coverage Report by Module"
+    @echo "====================================="
+    uv run pytest --cov=src --cov-report=term-missing --tb=no --quiet 2>/dev/null | grep -A 100 "coverage:"
+
 # Run a single test by name pattern
 test-match pattern:
     uv run pytest -k "{{pattern}}"
