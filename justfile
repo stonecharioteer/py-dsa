@@ -11,7 +11,7 @@ install:
 
 # Run all tests
 test:
-    uv run uv run pytest
+    uv run pytest
 
 # Run tests with coverage report
 test-cov:
@@ -40,6 +40,57 @@ test-dp:
 
 test-backtracking:
     uv run pytest -m backtracking
+
+test-linked-list:
+    uv run pytest -m linked_list
+
+test-greedy:
+    uv run pytest -m greedy
+
+test-union-find:
+    uv run pytest -m union_find
+
+test-bit-manipulation:
+    uv run pytest -m bit_manipulation
+
+test-binary-search:
+    uv run pytest -m binary_search
+
+test-graph:
+    uv run pytest -m graph
+
+test-stack-queue:
+    uv run pytest -m stack_queue
+
+test-trie:
+    uv run pytest -m trie
+
+test-heap:
+    uv run pytest -m heap
+
+test-blind150:
+    uv run pytest -m blind150
+
+test-numpy:
+    uv run pytest -m numpy
+
+test-pandas:
+    uv run pytest -m pandas
+
+test-string-algorithms:
+    uv run pytest -m string_algorithms
+
+test-sorting:
+    uv run pytest -m sorting
+
+test-pytorch:
+    uv run pytest -m pytorch
+
+test-pydantic:
+    uv run pytest -m pydantic
+
+test-fastapi:
+    uv run pytest -m fastapi
 
 # Run tests by difficulty level
 test-easy:
@@ -100,6 +151,15 @@ test-backtracking-intermediate:
 test-backtracking-advanced:
     uv run pytest -m backtracking_advanced
 
+test-string-algorithms-basic:
+    uv run pytest -m string_algorithms_basic
+
+test-string-algorithms-intermediate:
+    uv run pytest -m string_algorithms_intermediate
+
+test-string-algorithms-advanced:
+    uv run pytest -m string_algorithms_advanced
+
 # Watch for file changes and run tests
 watch:
     watchexec --restart --clear --exts py -- uv run pytest
@@ -126,6 +186,48 @@ watch-dp:
 
 watch-backtracking:
     watchexec --restart --clear --exts py -- uv run pytest -m backtracking
+
+watch-linked-list:
+    watchexec --restart --clear --exts py -- uv run pytest -m linked_list
+
+watch-greedy:
+    watchexec --restart --clear --exts py -- uv run pytest -m greedy
+
+watch-union-find:
+    watchexec --restart --clear --exts py -- uv run pytest -m union_find
+
+watch-bit-manipulation:
+    watchexec --restart --clear --exts py -- uv run pytest -m bit_manipulation
+
+watch-binary-search:
+    watchexec --restart --clear --exts py -- uv run pytest -m binary_search
+
+watch-graph:
+    watchexec --restart --clear --exts py -- uv run pytest -m graph
+
+watch-blind150:
+    watchexec --restart --clear --exts py -- uv run pytest -m blind150
+
+watch-numpy:
+    watchexec --restart --clear --exts py -- uv run pytest -m numpy
+
+watch-pandas:
+    watchexec --restart --clear --exts py -- uv run pytest -m pandas
+
+watch-string-algorithms:
+    watchexec --restart --clear --exts py -- uv run pytest -m string_algorithms
+
+watch-sorting:
+    watchexec --restart --clear --exts py -- uv run pytest -m sorting
+
+watch-pytorch:
+    watchexec --restart --clear --exts py -- uv run pytest -m pytorch
+
+watch-pydantic:
+    watchexec --restart --clear --exts py -- uv run pytest -m pydantic
+
+watch-fastapi:
+    watchexec --restart --clear --exts py -- uv run pytest -m fastapi
 
 # Watch by difficulty
 watch-easy:

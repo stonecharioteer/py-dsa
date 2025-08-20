@@ -135,3 +135,149 @@ class DPExercises:
         TODO: Use 2D DP to find LCS length
         """
         pass
+    
+    # EXPERT EXERCISES - Complex DP patterns and optimizations
+    
+    def maximum_profit_job_scheduling(self, start_time: List[int], end_time: List[int], profit: List[int]) -> int:
+        """
+        Expert: Maximum profit from non-overlapping job scheduling.
+        
+        Example:
+        Input: startTime = [1,2,3,3], endTime = [3,4,5,6], profit = [50,10,40,70]
+        Output: 120 (jobs 0 and 3)
+        
+        TODO: Sort by end time + DP with binary search
+        """
+        pass
+    
+    def burst_balloons(self, nums: List[int]) -> int:
+        """
+        Expert: Maximum coins from bursting balloons optimally.
+        
+        Example:
+        Input: nums = [3,1,5,8]
+        Output: 167 (burst in order: 1,5,3,8)
+        
+        TODO: Interval DP - choose last balloon to burst
+        """
+        pass
+    
+    def regular_expression_matching(self, s: str, p: str) -> bool:
+        """
+        Expert: Regular expression matching with '.' and '*'.
+        
+        Example:
+        Input: s = "aa", p = "a*"
+        Output: True
+        
+        TODO: 2D DP handling '.' (any char) and '*' (zero or more)
+        """
+        pass
+    
+    def wildcard_pattern_matching(self, s: str, p: str) -> bool:
+        """
+        Expert: Wildcard pattern matching with '?' and '*'.
+        
+        Example:
+        Input: s = "adceb", p = "*a*b*"
+        Output: True
+        
+        TODO: 2D DP handling '?' (one char) and '*' (any sequence)
+        """
+        pass
+    
+    def stone_game_ii(self, piles: List[int]) -> int:
+        """
+        Expert: Stone game where players can take 1 to 2*M piles.
+        
+        Example:
+        Input: piles = [2,7,9,4,4]
+        Output: 10 (Alice gets 10, Bob gets 6)
+        
+        TODO: Minimax DP with game theory
+        """
+        pass
+    
+    def count_vowels_in_strings_of_length_n(self, n: int) -> int:
+        """
+        Expert: Count strings of length n with vowels in lexicographic order.
+        
+        Example:
+        Input: n = 2
+        Output: 15 (aa, ae, ai, ao, au, ee, ei, eo, eu, ii, io, iu, oo, ou, uu)
+        
+        TODO: DP with vowel constraints (a≤e≤i≤o≤u order)
+        """
+        pass
+    
+    def russian_doll_envelopes(self, envelopes: List[List[int]]) -> int:
+        """
+        Expert: Maximum Russian dolls that can be nested.
+        
+        Example:
+        Input: envelopes = [[5,4],[6,4],[6,7],[2,3]]
+        Output: 3 (envelopes (2,3) -> (5,4) -> (6,7))
+        
+        TODO: Sort + LIS on second dimension
+        """
+        pass
+    
+    def minimum_cost_to_cut_stick(self, n: int, cuts: List[int]) -> int:
+        """
+        Expert: Minimum cost to cut stick at given positions.
+        
+        Example:
+        Input: n = 7, cuts = [1,3,4,5]
+        Output: 16
+        
+        TODO: Interval DP - choose order of cuts optimally
+        """
+        pass
+    
+    def count_palindromic_subsequences(self, s: str) -> int:
+        """
+        Expert: Count distinct palindromic subsequences.
+        
+        Example:
+        Input: s = "bccb"
+        Output: 6 (b, c, bb, cc, bcb, bccb)
+        
+        TODO: 2D DP with palindrome property
+        """
+        pass
+    
+    def super_egg_drop(self, k: int, n: int) -> int:
+        """
+        Expert: Minimum trials to find critical floor with k eggs and n floors.
+        
+        Example:
+        Input: k = 1, n = 2
+        Output: 2 (try floor 1, then floor 2)
+        
+        TODO: Binary search on answer + DP or mathematical formula
+        """
+        pass
+    
+    def largest_rectangle_in_histogram(self, heights: List[int]) -> int:
+        """
+        Expert: Find area of largest rectangle in histogram.
+        
+        Example:
+        Input: heights = [2,1,5,6,2,3]
+        Output: 10 (rectangle with height 5 and width 2)
+        
+        TODO: Stack-based solution or divide and conquer
+        """
+        pass
+    
+    def maximal_rectangle_in_binary_matrix(self, matrix: List[List[str]]) -> int:
+        """
+        Expert: Find maximal rectangle area in binary matrix.
+        
+        Example:
+        Input: matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"]]
+        Output: 6
+        
+        TODO: Use largest rectangle in histogram for each row
+        """
+        pass

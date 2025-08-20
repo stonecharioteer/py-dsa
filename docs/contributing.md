@@ -95,6 +95,8 @@ class NewTechniqueExercises:
 - **Comprehensive Coverage**: Include edge cases and various input sizes
 - **Real-World Relevance**: Problems should reflect actual interview/work scenarios
 - **Learning Scaffolding**: Each exercise should build on previous concepts
+- **No Solution Comments**: Exercise files should contain only TODO hints, not actual solutions
+- **Separate Solutions**: Medium and hard problems get detailed solutions in `docs/solutions/`
 
 ### 3. Function Naming Convention
 
@@ -399,6 +401,37 @@ Before adding new exercises, verify:
 - [ ] `just show-markers` shows new markers
 - [ ] Coverage remains above 80%
 - [ ] All new tests run and fail appropriately (waiting for implementation)
+- [ ] Medium/hard problems have detailed solutions in `docs/solutions/`
+
+### Solutions Documentation
+
+For medium and hard problems, create detailed solutions in `docs/solutions/`:
+
+```markdown
+# docs/solutions/technique-name-solutions.md
+# Technique Name - Detailed Solutions
+
+## Problem: Function Name
+
+### Problem Statement
+Clear restatement of the problem...
+
+### Approach
+Explanation of the algorithm and why it works...
+
+### Implementation
+```python
+def solution(self, params):
+    # Detailed implementation with comments
+    pass
+```
+
+### Time/Space Complexity
+Analysis of performance characteristics...
+
+### Key Insights
+What makes this solution work and when to use this pattern...
+```
 
 ## Example: Complete Addition Workflow
 
